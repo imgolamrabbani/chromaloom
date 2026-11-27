@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Documentation — ChromaLoom</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html">⚡ ChromaLoom</a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="docs.html">Docs</a>
+        <a href="privacy.html">Privacy</a>
+        <button id="theme-toggle" class="theme-btn" type="button">Light Mode</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container prose">
+    <h1>ChromaLoom Documentation</h1>
+    <p class="lead">Cross-browser Manifest V3 eyedropper, OKLCH math, WCAG 2.2 / APCA contrast solver, and Tailwind v4 token exporter.</p>
+
+    <h2>1. Permissions &amp; Security</h2>
+    <p>ChromaLoom uses only <code>activeTab</code>, <code>scripting</code>, <code>storage</code>, and <code>clipboardWrite</code>. It never requests <code>&lt;all_urls&gt;</code> or <code>cookies</code>.</p>
+
+    <h2>2. Pro Features</h2>
+    <ul>
+      <li><strong>WCAG 2.2 &amp; APCA <code>Lc</code> Auditor:</strong> Evaluate foreground/background pairs and click to solve the nearest AA or AAA shade in OKLCH space without shifting hue.</li>
+      <li><strong>Token Export:</strong> Export palettes to Tailwind v4 <code>@theme</code>, CSS Custom Properties, or W3C Design Tokens JSON.</li>
+      <li><strong>Gradient &amp; Box-Shadow Inspector + Swatch Boards:</strong> Capture active-tab gradients/shadows and manage local swatch boards with JSON import/export.</li>
+    </ul>
+
+    <h2>3. Polar.sh License Activation</h2>
+    <p>Open the ChromaLoom popup → Settings → paste your Polar.sh key. Your license state is cached locally in <code>chrome.storage.local</code> with 72-hour silent re-validation and a <strong>14-day offline grace window</strong>.</p>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© 2026 ChromaLoom</span>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>
