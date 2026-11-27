@@ -1,0 +1,28 @@
+{
+  "name": "chromaloom",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Precision MV3 Eyedropper, OKLCH Palette Scanner & WCAG 2.2 / APCA Contrast Studio for Edge, Firefox & Chrome.",
+  "license": "MIT",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build:bg": "esbuild src/background.ts --bundle --outfile=dist/background.js --format=esm --target=es2022 --minify",
+    "build:popup": "vite build",
+    "build": "npm run build:popup && npm run build:bg",
+    "test": "vitest run",
+    "package:all": "npm run build && node scripts/package-zips.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "esbuild": "^0.25.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "typescript": "^5.7.3",
+    "vite": "^6.1.0",
+    "vitest": "^3.0.5"
+  }
+}

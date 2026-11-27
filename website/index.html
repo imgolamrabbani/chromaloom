@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ChromaLoom — Cross-Browser MV3 Color, Palette &amp; WCAG 2.2 / OKLCH Studio</title>
+  <meta name="description" content="Cross-browser Manifest V3 eyedropper, page palette scanner, exact OKLCH math, WCAG 2.2 + APCA contrast solver & Tailwind v4 @theme exporter. Zero <all_urls>." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html"><span>⚡ ChromaLoom</span></a>
+      <nav class="nav-links">
+        <a class="hide-sm" href="#features">Features</a>
+        <a class="hide-sm" href="#pricing">Pricing</a>
+        <a href="docs.html">Docs</a>
+        <a href="privacy.html">Privacy</a>
+        <button id="theme-toggle" class="theme-btn" type="button">Light Mode</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <div class="pill">● MV3 · Zero &lt;all_urls&gt; · Edge + Firefox + Chrome</div>
+        <h1>OKLCH, Palette &amp; <span class="grad">WCAG 2.2 / APCA</span> Contrast Studio</h1>
+        <p class="lead">A modern Manifest V3 replacement for legacy color pickers. Pick any pixel on Edge, Firefox, or Chrome, extract page palettes, solve WCAG 2.2 + APCA contrast in OKLCH, and export Tailwind v4 <code>@theme</code> tokens—with zero telemetry.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="https://github.com/imgolamrabbani/chromaloom/releases/tag/v1.0.0" target="_blank" rel="noopener">Get Edge / Chrome / Firefox MV3</a>
+          <a class="btn btn-secondary" href="docs.html">Read Docs</a>
+        </div>
+        <div class="trust-note">Minimal Permissions Only (<code>activeTab</code>, <code>scripting</code>, <code>storage</code>, <code>clipboardWrite</code>) · Zero <code>&lt;all_urls&gt;</code></div>
+      </div>
+
+      <div class="preview-card" aria-label="Interactive OKLCH and WCAG preview">
+        <div class="preview-tabs">
+          <button class="preview-tab active" type="button" data-snippet="oklch">OKLCH Math</button>
+          <button class="preview-tab" type="button" data-snippet="wcag">WCAG + APCA Solver</button>
+          <button class="preview-tab" type="button" data-snippet="tailwind">Tailwind v4 @theme</button>
+        </div>
+        <pre id="preview-code" class="preview-code">/* Exact Björn Ottosson OKLCH Color Math */
+Picked Color:  #6366F1
+RGB:           rgb(99, 102, 241)
+HSL:           hsl(239, 84%, 67%)
+OKLCH:         oklch(0.585 0.233 277.1)
+
+/* Permissions: activeTab, scripting, storage, clipboardWrite */
+/* Zero &lt;all_urls&gt; · Zero cookies · Zero telemetry */</pre>
+        <div class="preview-footer">
+          <span>ChromaLoom MV3</span>
+          <span id="preview-status" class="status-badge">OKLCH(0.585 0.233 277.1) · Copied to clipboard</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="section">
+      <h2 class="section-title">Designed for modern CSS &amp; accessibility</h2>
+      <p class="section-sub">Built from scratch on Manifest V3 with zero broad host permissions, zero remote scripts, and exact perceptual color math.</p>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Cross-Browser Eyedropper</h3>
+          <p>Uses native <code>window.EyeDropper</code> on Edge/Chrome and a crisp <code>captureVisibleTab</code> 11×11 Canvas zoom loupe on Firefox.</p>
+        </div>
+        <div class="card">
+          <h3>Exact OKLCH Engine</h3>
+          <p>Instant HEX, RGB, HSL, and exact Björn Ottosson OKLCH conversions with 200-entry local history.</p>
+        </div>
+        <div class="card">
+          <h3>Page Palette Scanner</h3>
+          <p>Extract computed colors from the active tab on demand via <code>activeTab</code> + <code>scripting</code>—no <code>&lt;all_urls&gt;</code> needed.</p>
+        </div>
+        <div class="card">
+          <h3>WCAG 2.2 + APCA Solver</h3>
+          <p>Audit contrast ratios and APCA <code>Lc</code>, then binary-search OKLCH lightness <code>L</code> to find the nearest compliant shade.</p>
+        </div>
+        <div class="card">
+          <h3>Tailwind v4 &amp; W3C Tokens</h3>
+          <p>Export palettes directly to Tailwind v4 <code>@theme</code>, CSS Custom Properties, or W3C Design Tokens JSON.</p>
+        </div>
+        <div class="card">
+          <h3>Gradients &amp; Swatch Boards</h3>
+          <p>Inspect active-tab CSS gradients and box-shadows and organize local swatch boards with JSON import/export.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing" class="section">
+      <h2 class="section-title">Simple, Honest Pricing</h2>
+      <p class="section-sub">Eyedropper, OKLCH conversions, Page Palette Scanner, and 200-entry history are free forever. Upgrade for WCAG/APCA solving, Token Export, and Swatch Boards.</p>
+
+      <div class="pricing-grid">
+        <div class="price-card">
+          <h3>ChromaLoom Free</h3>
+          <div class="price-tag">$0 <span style="font-size:1rem;font-weight:500;color:var(--muted)">Forever</span></div>
+          <div class="price-sub">No login. Zero telemetry. Minimal MV3 permissions.</div>
+          <ul class="price-list">
+            <li>✓ Edge/Chrome EyeDropper + Firefox 11×11 Canvas Loupe</li>
+            <li>✓ HEX, RGB, HSL &amp; exact OKLCH conversions</li>
+            <li>✓ Active-tab Page Palette Scanner</li>
+            <li>✓ 200-entry local history + one-click clipboard copy</li>
+          </ul>
+          <a class="btn btn-secondary" href="https://github.com/imgolamrabbani/chromaloom/releases/tag/v1.0.0" target="_blank" rel="noopener">Install Free MV3 Extension</a>
+        </div>
+
+        <div class="price-card featured">
+          <h3>ChromaLoom Pro</h3>
+          <div class="price-tag">$19 <span style="font-size:1rem;font-weight:500;color:var(--muted)">Early Bird · $24 Perpetual (or $5/mo)</span></div>
+          <div class="price-sub">All v1.x updates · Up to 3 browsers/machines · 14-day offline grace</div>
+          <ul class="price-list">
+            <li>✓ Everything in Free Forever</li>
+            <li>✓ WCAG 2.2 AA/AAA + APCA <code>Lc</code> Contrast Auditor</li>
+            <li>✓ OKLCH Binary-Search Compliant Shade Solver</li>
+            <li>✓ Tailwind v4 <code>@theme</code>, CSS Vars &amp; W3C JSON Export</li>
+            <li>✓ CSS Gradient/Shadow Inspector &amp; Swatch Boards</li>
+          </ul>
+          <div class="cta-row" style="margin-bottom:0">
+            <a class="btn btn-primary" href="https://polar.sh/bani" target="_blank" rel="noopener">Get Pro ($19 Early Bird)</a>
+            <a class="btn btn-secondary" href="https://polar.sh/bani" target="_blank" rel="noopener">$5/mo Option</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Capability</th>
+              <th>Free ($0 Forever)</th>
+              <th>Pro ($19 Early Bird / $24 Std / $5/mo)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Cross-Browser Eyedropper + OKLCH Engine + History</td><td>Full</td><td>Full</td></tr>
+            <tr><td>Active-Tab Page Palette Scanner</td><td>Full</td><td>Full</td></tr>
+            <tr><td>WCAG 2.2 + APCA <code>Lc</code> + OKLCH Shade Solver (<code>wcag_auditor</code>)</td><td>—</td><td>Included</td></tr>
+            <tr><td>Tailwind v4 <code>@theme</code> / CSS / W3C JSON Export (<code>token_export</code>)</td><td>—</td><td>Included</td></tr>
+            <tr><td>Gradient/Shadow Inspector &amp; Swatch Boards (<code>gradient_boards</code>)</td><td>—</td><td>Included</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="privacy-box">
+        <h2 style="margin-top:0">Privacy Promise: Zero &lt;all_urls&gt;, Zero Telemetry</h2>
+        <p style="margin-bottom:0;color:var(--muted)">ChromaLoom requests only <code>activeTab</code>, <code>scripting</code>, <code>storage</code>, and <code>clipboardWrite</code>. We never read your browsing history, cookies, or page contents in the background. <a href="privacy.html">Read full Privacy Policy →</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© 2026 ChromaLoom · Cross-Browser MV3</span>
+      <div class="footer-links">
+        <a href="docs.html">Documentation</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

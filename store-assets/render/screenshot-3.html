@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    width: 1280px; height: 800px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: #0F172A; color: #E2E8F0; overflow: hidden;
+    display: flex; flex-direction: column;
+  }
+  .topbar {
+    height: 54px; background: #1E293B; border-bottom: 1px solid #334155;
+    padding: 0 28px; display: flex; align-items: center; justify-content: space-between;
+  }
+  .pro-tag { background: linear-gradient(90deg, #FB7185, #FBBF24); color: #0F172A; font-size: 11px; font-weight: 800; padding: 2px 8px; border-radius: 4px; }
+  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding: 26px; flex: 1; }
+  .panel { background: #1E293B; border: 1px solid #334155; border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; }
+  .p-hdr { padding: 14px 18px; background: #243247; border-bottom: 1px solid #334155; font-weight: 700; display: flex; justify-content: space-between; }
+  pre { padding: 18px; font-family: ui-monospace, monospace; font-size: 13px; line-height: 1.65; color: #CBD5E1; background: #0B1020; flex: 1; }
+  .board { padding: 18px; display: flex; flex-direction: column; gap: 14px; }
+  .board-card { background: #0F172A; border: 1px solid #334155; border-radius: 10px; padding: 14px; }
+  .sw-row { display: flex; gap: 8px; margin-top: 10px; }
+  .sw { flex: 1; height: 34px; border-radius: 6px; }
+</style>
+</head>
+<body>
+  <div class="topbar">
+    <div style="display:flex;align-items:center;gap:10px;font-weight:700">
+      <span>ChromaLoom — Token Export &amp; Swatch Boards</span>
+      <span class="pro-tag">PRO</span>
+    </div>
+    <span style="color:#34D399;font-size:13px">Tailwind v4 @theme · CSS Vars · W3C Design Tokens JSON</span>
+  </div>
+  <div class="split">
+    <div class="panel">
+      <div class="p-hdr"><span>Tailwind v4 @theme Export</span><span style="color:#67E8F9;font-size:12px">Copy / Download</span></div>
+      <pre>@theme {
+  --color-brand-ink: oklch(0.184 0.029 262.7);
+  --color-brand-primary: oklch(0.585 0.233 277.1);
+  --color-brand-cyan: oklch(0.815 0.142 205.2);
+  --color-brand-amber: oklch(0.769 0.171 70.1);
+  --color-brand-rose: oklch(0.645 0.246 16.4);
+}</pre>
+    </div>
+    <div class="panel">
+      <div class="p-hdr"><span>Local Swatch Boards &amp; Gradient Inspector</span><span style="color:#94A3B8;font-size:12px">JSON Import/Export</span></div>
+      <div class="board">
+        <div class="board-card">
+          <strong>SaaS Dark UI Kit (5 colors)</strong>
+          <div class="sw-row">
+            <div class="sw" style="background:#0F172A"></div>
+            <div class="sw" style="background:#6366F1"></div>
+            <div class="sw" style="background:#22D3EE"></div>
+            <div class="sw" style="background:#F59E0B"></div>
+            <div class="sw" style="background:#F43F5E"></div>
+          </div>
+        </div>
+        <div class="board-card">
+          <strong>Captured Active-Tab Gradient</strong>
+          <div style="height:44px;border-radius:8px;margin-top:8px;background:linear-gradient(135deg,#0F172A,#1E1B4B)"></div>
+          <div style="font-family:ui-monospace,monospace;font-size:12px;color:#94A3B8;margin-top:8px">linear-gradient(135deg, #0F172A, #1E1B4B)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

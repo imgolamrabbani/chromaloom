@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    width: 1280px; height: 800px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: #0F172A; color: #E2E8F0; overflow: hidden;
+    display: flex; flex-direction: column;
+  }
+  .topbar {
+    height: 54px; background: #1E293B; border-bottom: 1px solid #334155;
+    padding: 0 28px; display: flex; align-items: center; justify-content: space-between;
+  }
+  .pro-tag { background: linear-gradient(90deg, #FB7185, #FBBF24); color: #0F172A; font-size: 11px; font-weight: 800; padding: 2px 8px; border-radius: 4px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding: 28px; flex: 1; }
+  .panel { background: #1E293B; border: 1px solid #334155; border-radius: 14px; padding: 22px; display: flex; flex-direction: column; gap: 16px; }
+  .preview-box { border-radius: 12px; padding: 26px; background: #0B1020; border: 1px solid #334155; }
+  .metric-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .metric { background: #0F172A; border: 1px solid #334155; border-radius: 10px; padding: 14px; }
+  .m-lbl { font-size: 12px; color: #94A3B8; }
+  .m-val { font-size: 26px; font-weight: 800; margin-top: 4px; }
+  .pass { color: #34D399; }
+  .fail { color: #FCA5A5; }
+  .solve-card { background: #0F172A; border: 1px solid #10B981; border-radius: 10px; padding: 16px; display: flex; justify-content: space-between; align-items: center; }
+</style>
+</head>
+<body>
+  <div class="topbar">
+    <div style="display:flex;align-items:center;gap:10px;font-weight:700">
+      <span>ChromaLoom — WCAG 2.2 &amp; APCA Lc Contrast Studio</span>
+      <span class="pro-tag">PRO</span>
+    </div>
+    <span style="color:#67E8F9;font-size:13px">OKLCH Binary-Search Compliant Shade Solver</span>
+  </div>
+  <div class="grid">
+    <div class="panel">
+      <div style="font-weight:700;font-size:16px">Contrast Preview (Foreground vs. Background)</div>
+      <div class="preview-box">
+        <div style="color:#6366F1;font-size:24px;font-weight:800;margin-bottom:8px">Sample Heading (#6366F1 on #0B1020)</div>
+        <div style="color:#6366F1;font-size:14px">Body text legibility check at 14px normal weight.</div>
+      </div>
+      <div class="metric-grid">
+        <div class="metric">
+          <div class="m-lbl">WCAG 2.2 Ratio</div>
+          <div class="m-val" style="color:#FBBF24">3.91 : 1</div>
+          <div style="font-size:12px;color:#FCA5A5;margin-top:4px">AA Normal: FAIL · AA Large: PASS</div>
+        </div>
+        <div class="metric">
+          <div class="m-lbl">APCA Perceptual Lc</div>
+          <div class="m-val" style="color:#FBBF24">Lc 37.8</div>
+          <div style="font-size:12px;color:#FCA5A5;margin-top:4px">Below Lc 60 body threshold</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div style="font-weight:700;font-size:16px">Auto-Suggested Nearest Compliant OKLCH Shades</div>
+      <div class="solve-card">
+        <div>
+          <div style="font-weight:700;color:#34D399">WCAG AA Target (≥ 4.5:1)</div>
+          <div style="font-family:ui-monospace,monospace;font-size:13px;margin-top:4px">#787CF5 · oklch(0.642 0.205 277.1)</div>
+        </div>
+        <div style="width:48px;height:48px;border-radius:8px;background:#787CF5"></div>
+      </div>
+      <div class="solve-card">
+        <div>
+          <div style="font-weight:700;color:#34D399">WCAG AAA Target (≥ 7.0:1)</div>
+          <div style="font-family:ui-monospace,monospace;font-size:13px;margin-top:4px">#9DA2FA · oklch(0.754 0.145 277.1)</div>
+        </div>
+        <div style="width:48px;height:48px;border-radius:8px;background:#9DA2FA"></div>
+      </div>
+      <div style="font-size:13px;color:#94A3B8">Hue (277.1°) is preserved exactly while binary-searching OKLCH lightness <code>L</code>.</div>
+    </div>
+  </div>
+</body>
+</html>

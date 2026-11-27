@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    width: 1280px; height: 640px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
+    background: radial-gradient(circle at 18% 20%, #311042 0%, #0B1020 55%, #060913 100%);
+    color: #F8FAFC; overflow: hidden; position: relative;
+  }
+  .grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(244, 63, 94, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(34, 211, 238, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .wrap {
+    position: relative; z-index: 2; display: flex; align-items: center;
+    justify-content: space-between; height: 100%; padding: 64px 72px; gap: 48px;
+  }
+  .left { max-width: 640px; }
+  .brand { display: flex; align-items: center; gap: 16px; margin-bottom: 22px; }
+  .brand-name { font-size: 28px; font-weight: 800; letter-spacing: -0.02em; }
+  .badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(34, 211, 238, 0.14); border: 1px solid rgba(34, 211, 238, 0.35);
+    color: #67E8F9; font-size: 13.5px; font-weight: 700;
+    padding: 6px 14px; border-radius: 999px; margin-bottom: 20px;
+  }
+  h1 { font-size: 44px; line-height: 1.12; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 18px; }
+  h1 span {
+    background: linear-gradient(90deg, #FB7185, #FBBF24, #22D3EE);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  p.sub { font-size: 19.5px; line-height: 1.5; color: #94A3B8; margin-bottom: 28px; }
+  .pills { display: flex; flex-wrap: wrap; gap: 10px; }
+  .pill {
+    background: rgba(30, 41, 59, 0.85); border: 1px solid rgba(148, 163, 184, 0.22);
+    color: #E2E8F0; font-size: 13.5px; font-weight: 600; padding: 8px 14px; border-radius: 8px;
+  }
+  .card {
+    width: 455px; background: #0F172A; border: 1px solid rgba(251, 113, 133, 0.32);
+    border-radius: 16px; box-shadow: 0 28px 70px rgba(0, 0, 0, 0.65); overflow: hidden;
+  }
+  .card-top {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 12px 18px; background: #1E293B; border-bottom: 1px solid rgba(148, 163, 184, 0.16);
+    font-size: 13px; color: #94A3B8;
+  }
+  .swatch-bar { display: flex; height: 54px; }
+  .sw { flex: 1; }
+  .info { padding: 18px; font-family: ui-monospace, monospace; font-size: 13px; line-height: 1.7; }
+  .badge-aaa { background: rgba(16, 185, 129, 0.18); color: #34D399; padding: 2px 9px; border-radius: 5px; font-weight: 700; }
+</style>
+</head>
+<body>
+  <div class="grid"></div>
+  <div class="wrap">
+    <div class="left">
+      <div class="brand">
+        <svg width="52" height="52" viewBox="0 0 256 256">
+          <defs>
+            <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#0F172A" />
+              <stop offset="100%" stop-color="#1E1B4B" />
+            </linearGradient>
+            <linearGradient id="prism" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#F43F5E" />
+              <stop offset="50%" stop-color="#F59E0B" />
+              <stop offset="100%" stop-color="#22D3EE" />
+            </linearGradient>
+          </defs>
+          <rect x="10" y="10" width="236" height="236" rx="54" fill="url(#bg)" stroke="#38BDF8" stroke-opacity="0.45" stroke-width="4" />
+          <circle cx="128" cy="128" r="70" fill="none" stroke="url(#prism)" stroke-width="26" />
+          <circle cx="128" cy="128" r="24" fill="#F8FAFC" />
+          <path d="M128 104 A24 24 0 0 1 128 152 Z" fill="#0F172A" />
+        </svg>
+        <span class="brand-name">ChromaLoom</span>
+      </div>
+      <div class="badge">● MV3 · ZERO &lt;all_urls&gt; · EDGE + FIREFOX + CHROME</div>
+      <h1>OKLCH, Palette &amp; <span>WCAG 2.2 / APCA</span> Studio</h1>
+      <p class="sub">Cross-browser MV3 eyedropper &amp; page palette scanner with exact Björn Ottosson OKLCH math, WCAG 2.2 + APCA contrast solver, and Tailwind v4 <code>@theme</code> export.</p>
+      <div class="pills">
+        <span class="pill">EyeDropper + FX Loupe</span>
+        <span class="pill">Exact OKLCH Math</span>
+        <span class="pill">WCAG 2.2 + APCA Lc</span>
+        <span class="pill">Tailwind v4 @theme</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <span>CHROMALOOM · ACTIVE TAB PALETTE</span>
+        <span class="badge-aaa">7.42:1 AAA · Lc 76.4</span>
+      </div>
+      <div class="swatch-bar">
+        <div class="sw" style="background:#0F172A"></div>
+        <div class="sw" style="background:#6366F1"></div>
+        <div class="sw" style="background:#22D3EE"></div>
+        <div class="sw" style="background:#F59E0B"></div>
+        <div class="sw" style="background:#F43F5E"></div>
+      </div>
+      <div class="info">
+        <div>HEX: <strong style="color:#F8FAFC">#6366F1</strong> &nbsp;|&nbsp; RGB: rgb(99, 102, 241)</div>
+        <div>OKLCH: <strong style="color:#67E8F9">oklch(0.585 0.233 277.1)</strong></div>
+        <div style="color:#34D399">✓ Tailwind v4: --color-brand-500: oklch(0.585 0.233 277.1);</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
